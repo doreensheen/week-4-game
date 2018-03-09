@@ -4,6 +4,12 @@ $(document).ready(function(){
     var numberOfWins = 0;
     var numberOfLosses = 0;
     var currentCount = 0;
+
+    var randomNumber;
+    var randomOne;
+    var randomTwo;
+    var randomThree;
+    var randomFour;
     
     // Write Functions here:
     var myFunctions = {
@@ -11,31 +17,38 @@ $(document).ready(function(){
             if (currentCount === randomNumber) {
                 numberOfWins = numberOfWins + 1;
                 $("#displayWins").text("WINS: " + numberOfWins);
-                currentCount = 0;
-                $("#displayCurrentCount").text("");
+                myFunctions.roundSetup();
 
             }else if (currentCount > randomNumber) {
                 numberOfLosses = numberOfLosses + 1;
                 $("#displayLosses").text("LOSSES: " + numberOfLosses);
-                currentCount = 0;
-                $("#displayCurrentCount").text("");
-
+                myFunctions.roundSetup();
+                
             };
+        },
+        makeRandom: function(low, high) {
+            var number = Math.floor((Math.random()*(high-low)) + low);
+            return number;
+        },
+        roundSetup: function() {
+            // Generate random numbers:
+            randomNumber = myFunctions.makeRandom(19, 120);
+            $("#displayRandomNumber").text(randomNumber);
+            randomOne = myFunctions.makeRandom(1, 12);
+            randomTwo = myFunctions.makeRandom(1, 12);
+            randomThree = myFunctions.makeRandom(1, 12);
+            randomFour = myFunctions.makeRandom(1, 12);
+            currentCount = 0;
+            $("#displayCurrentCount").text("");
         }
     };
     
-    // Generate random numbers:
-    var randomNumber = 25;
-    var randomOne = 1;
-    var randomTwo = 2;
-    var randomThree = 3;
-    var randomFour = 4;
+    // call roundSetup for intial round
+    myFunctions.roundSetup();
    
     // display to html
     $("#displayWins").text("WINS: " + numberOfWins);
     $("#displayLosses").text("LOSSES: " + numberOfLosses);
-    $("#displayRandomNumber").text(randomNumber);
-    $("#displayCurrentCount").text("");
     
 
     // onclick events
