@@ -1,0 +1,47 @@
+body {
+    background-color: lightsteelblue;
+}
+
+button {
+    height: 100px;
+    width: 100%;
+    background-color: lightsteelblue;
+    color: black;
+    font-size: 300%;
+}
+
+ul {
+    margin: 0;
+}
+
+
+p {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.subHeading {
+    font-size: 150%;
+    font-family: 'Lucida Sans';
+}
+
+.statBox {
+    border-width: 1px;
+    border-style: solid;
+    margin-bottom: 10px;
+    background-color: white;
+    font-size: 100%;
+}
+
+.darkBackground {
+    background-color: darkblue;
+    color: white;
+}
+
+.numberBox {
+    font-size: 400%;
+}
+
+a {
+    color: white;
+}
