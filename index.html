@@ -3,9 +3,14 @@
 <html>
 
     <head>
-        <title>Crystal Collector</title>
         <meta charset="utf-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>Crystal Collector</title>
+
+        <!-- Added link to the jQuery Library -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
         <link rel="stylesheet" href="./assets/css/reset.css"></link>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
         <link rel="stylesheet" href="./assets/css/style.css"></link>
@@ -30,11 +35,11 @@
                         <div class="col-md-2 col-xs-2"></div>
                         <div class="statBox col-md-4 col-xs-4">
                             <!-- wins -->
-                            <p class="subHeading">WINS: 1</p>
+                            <p id="displayWins" class="subHeading"></p>
                         </div>
                         <div class="statBox col-md-4 col-xs-4">
                             <!-- losses -->
-                            <p class="subHeading">LOSSES: 2</p>
+                            <p id="displayLosses" class="subHeading"></p>
                         </div>
                     </div>
                     <!-- game field -->
@@ -43,7 +48,7 @@
                             <!-- goal count -->
                             <p class="subHeading">GOAL :
                                 <div class="numberBox">
-                                    <div>38</div>
+                                    <div id="displayRandomNumber"></div>
                                 </div>
                             </p>
                         </div>
@@ -51,24 +56,24 @@
                             <!-- crystal buttons -->
                             <div class="row">
                                 <ul class="col-md-6 col-xs-3" style="padding-left: 0; padding-right: 0;">
-                                    <li><button class="glyphicon glyphicon-unchecked"></button></li>
+                                    <li><button id="buttonOne" class="button glyphicon glyphicon-unchecked"></button></li>
                                 </ul>
                                 <ul class="col-md-6 col-xs-3" style="padding-left: 0; padding-right: 0;">
-                                    <li><button class="glyphicon glyphicon-certificate"></button></li>
+                                    <li><button id="buttonTwo" class="button glyphicon glyphicon-certificate"></button></li>
                                 </ul>
                                 <ul class="col-md-6 col-xs-3" style="padding-left: 0; padding-right: 0;">
-                                    <li><button class="glyphicon glyphicon-asterisk"></button></li>
+                                    <li><button id="buttonThree" class="button glyphicon glyphicon-asterisk"></button></li>
                                 </ul>
                                 <ul class="col-md-6 col-xs-3" style="padding-left: 0; padding-right: 0;">
-                                    <li><button class="glyphicon glyphicon-star"></button></li>
+                                    <li><button id="buttonFour" class="button glyphicon glyphicon-star"></button></li>
                                 </ul>
                             </div>
                         </div>
                         <div class="col-md-4 col-xs-12">
                             <!-- your count -->
-                            <p class="subHeading">YOUR COUNT : </p>
+                            <p class="subHeading">CURRENT COUNT : </p>
                             <div class="numberBox">
-                                <div>23</div>
+                                <div id="displayCurrentCount"></div>
                             </div>
                         </div>
                     </div>
